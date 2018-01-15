@@ -1,0 +1,78 @@
+<html><head></head><body>
+<table border=0 cellspacing=0 cellpadding=6>
+<tr>
+<td valign=top><img src="icon.png"><td valign=top>
+<h2>Particle Swarm Optimization</h2> 
+Version 1 by: Joey Harrison and Ankur Desai<br>
+Version 2 by: Nik Swoboda
+</table>
+
+<p>Particle Swarm Optimization (PSO) is a population-oriented stochastic
+search technique similar to genetic algorithms and other evolutionary
+computation algorithms.  The technique discovers solutions for
+N-dimensional parameterized problems: basically it discovers the point
+in N-dimensional space which maximizes some fitness function.</p>
+
+<p>PSO works approximately as follows: a "swarm" of candidate solutions
+("particles") are placed randomly throughout the space with a random
+initial velocity vector.  This velocity vector affects how each particle
+moves in the space, and it is changed each time step according to a
+weighted sum of the following values: </p>
+
+<ul>
+  <li>The particle's previous velocity vector.</li>
+  <li>A vector towards the <b>personal best</b> location the particle
+    has ever visited.</li>
+  <li> Either:
+  <ul>
+  <li>A vector towards the <b>global best</b>, the best location that any
+    member of the swarm has ever visited.</li>
+  <li>A vector towards the <b>"neighborhood best"</b>: all the particles
+    are organized beforehand in a list.  A particle's neighborhood are
+    himself and the M individuals on either side of him.  The
+    neighborhood best is the best location any neighbor ever
+    visited.</li>
+  </ul>
+</ul>
+
+<p>This simulation applies PSO to a number of  simple two-dimensional
+problems sufficient for visualization.  The model parameters are:</p>
+
+<ul>
+  <li><b>Function</b>: the function applied in the space.
+  "Better" return values are higher.  There are several available
+  functions, all common to the stochastic search literature:
+    <ul>
+      <li><b>Booth</b>.  (x + 2*y - 7)<sup>2</sup> + 
+        (2*x + y - 5)<sup>2</sup></li>
+      <li><b>Rastrigin</b>.  20 + x<sup>2</sup> - 10*cos(2*Pi*x)
+        + y<sup>2</sup> - 10*cos(2*Pi*y) </li>
+      <li><b>Griewank</b>.  (1 + 1/4000 * (x<sup>2</sup> + y<sup>2</sup>) 
+        - (cos(x)*cos(y / sqrt(2)))</li>
+      <li><b>Rosenbrock</b>.  (1 - x)<sup>2</sup> +
+        100*(y - x<sup>2</sup>)</li>
+    </ul>
+  </li>
+  <li><b>NumParticles</b>: the number of particles in the swarm.</li>
+  <li><b>isGlobalBest</b>: whether the global best particle has an
+    influence over all the others or whether neighborhoods are
+    used.</li>
+  <li><b>NeighborhoodSize</b>: when isGlobalBest is false, the size of
+    the particle's "neighborhood", including himself.</li>
+  <li><b>MaxVelocity</b>: this defines the range of possible velocities
+    for each particle (from -MaxVelocity to MaxVelocity).</li>
+  <li><b>InertiaConstant</b>:The constant which is used to scale the
+    previous velocity in the weighted sum.</li>
+  <li><b>CognitiveConstant</b>:The constant which is used to scale the
+    influence of the personal-best in the weighted sum.</li>
+  <li><b>SocialConstant</b>:The constant which is used to scale the
+    influence of the global- OR neighborhood-best in the weighted sum.</li>
+  <li><b>SuccessThreshold</b>: A particle must reach this close to the
+    global minimum (the solution) in order to be considered "optimal".
+    The simulation terminates when all particles are within this
+    threshold.</li>
+</ul>
+
+<p>As particles move through the space they are colored in a spectrum
+from Blue to Red to illustrate their distance from the global minimum.
+The global minimum is shown with a small white oval.</p>
