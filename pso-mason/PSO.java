@@ -223,7 +223,7 @@ public class PSO extends SimState
         {
 	  public void step(SimState state) { p.stepUpdatePosition(); }
         });
-    }                       
+    }
 
     schedule.scheduleRepeating(Schedule.EPOCH, 4, new Steppable()
      {

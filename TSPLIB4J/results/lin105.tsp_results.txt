@@ -1,0 +1,160 @@
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 10 Leader: 2
+bLoc: 0.3 bGlob: 0.7
+Global best: 14412.0 reached at iteration: 32
+Global worst: 14597.0
+Global mean distance: 14605.948 stddev distance: 14635.777083275278
+Global mean time: 1358.1 stddev time: 10020.980356787042
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 10 Leader: 2
+bLoc: 0.4 bGlob: 0.6
+Global best: 14480.0 reached at iteration: 18
+Global worst: 14624.0
+Global mean distance: 14608.004 stddev distance: 14637.722602918788
+Global mean time: 1373.2 stddev time: 10132.411017236847
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 10 Leader: 2
+bLoc: 0.5 bGlob: 0.5
+Global best: 14434.0 reached at iteration: 30
+Global worst: 14597.0
+Global mean distance: 14603.288 stddev distance: 14632.932724250793
+Global mean time: 1397.2 stddev time: 10309.467758651128
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 10 Leader: 2
+bLoc: 0.6 bGlob: 0.4
+Global best: 14401.0 reached at iteration: 12
+Global worst: 14672.0
+Global mean distance: 14614.372 stddev distance: 14644.371625893307
+Global mean time: 1403.3 stddev time: 10354.465092681268
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 10 Leader: 2
+bLoc: 0.7 bGlob: 0.3
+Global best: 14434.0 reached at iteration: 10
+Global worst: 14599.0
+Global mean distance: 14580.088 stddev distance: 14610.081572607116
+Global mean time: 1399.9 stddev time: 10329.38863308632
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 20 Leader: 5
+bLoc: 0.3 bGlob: 0.7
+Global best: 14447.0 reached at iteration: 12
+Global worst: 14566.0
+Global mean distance: 14557.284 stddev distance: 14586.672317192755
+Global mean time: 2438.1 stddev time: 17997.36566463733
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 20 Leader: 5
+bLoc: 0.4 bGlob: 0.6
+Global best: 14448.0 reached at iteration: 50
+Global worst: 14547.0
+Global mean distance: 14537.476 stddev distance: 14566.842312864932
+Global mean time: 2891.1 stddev time: 21332.44507994549
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 20 Leader: 5
+bLoc: 0.5 bGlob: 0.5
+Global best: 14426.0 reached at iteration: 48
+Global worst: 14624.0
+Global mean distance: 14566.836 stddev distance: 14596.34765492565
+Global mean time: 2870.4 stddev time: 21179.696007680915
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 20 Leader: 5
+bLoc: 0.6 bGlob: 0.4
+Global best: 14426.0 reached at iteration: 38
+Global worst: 14573.0
+Global mean distance: 14571.86 stddev distance: 14601.34118351559
+Global mean time: 2228.7 stddev time: 16452.737010398472
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 20 Leader: 5
+bLoc: 0.7 bGlob: 0.3
+Global best: 14438.0 reached at iteration: 30
+Global worst: 14569.0
+Global mean distance: 14544.232 stddev distance: 14573.58062002453
+Global mean time: 1838.2 stddev time: 13563.571715771968
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 50 Leader: 10
+bLoc: 0.3 bGlob: 0.7
+Global best: 14412.0 reached at iteration: 6
+Global worst: 14532.0
+Global mean distance: 14510.176 stddev distance: 14539.466962382146
+Global mean time: 5980.9 stddev time: 44145.123923260115
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 50 Leader: 10
+bLoc: 0.4 bGlob: 0.6
+Global best: 14425.0 reached at iteration: 22
+Global worst: 14565.0
+Global mean distance: 14504.744 stddev distance: 14534.01773986296
+Global mean time: 6256.3 stddev time: 46178.24204367729
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 50 Leader: 10
+bLoc: 0.5 bGlob: 0.5
+Global best: 14379.0 reached at iteration: 30
+Global worst: 14492.0
+Global mean distance: 14508.136 stddev distance: 14537.449806741699
+Global mean time: 5178.5 stddev time: 38222.93867561729
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 50 Leader: 10
+bLoc: 0.6 bGlob: 0.4
+Global best: 14401.0 reached at iteration: 22
+Global worst: 14504.0
+Global mean distance: 14502.624 stddev distance: 14531.846986925151
+Global mean time: 6493.6 stddev time: 47918.33040682605
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 50 Leader: 10
+bLoc: 0.7 bGlob: 0.3
+Global best: 14401.0 reached at iteration: 24
+Global worst: 14550.0
+Global mean distance: 14494.828 stddev distance: 14524.026470080993
+Global mean time: 5884.5 stddev time: 43426.921183114566
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 100 Leader: 10
+bLoc: 0.3 bGlob: 0.7
+Global best: 14379.0 reached at iteration: 40
+Global worst: 14490.0
+Global mean distance: 14465.42 stddev distance: 14494.56977990093
+Global mean time: 10522.6 stddev time: 77658.24043332438
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 100 Leader: 10
+bLoc: 0.4 bGlob: 0.6
+Global best: 14379.0 reached at iteration: 42
+Global worst: 14460.0
+Global mean distance: 14471.656 stddev distance: 14500.78979458249
+Global mean time: 10246.0 stddev time: 75624.8821339761
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 100 Leader: 10
+bLoc: 0.5 bGlob: 0.5
+Global best: 14379.0 reached at iteration: 32
+Global worst: 14488.0
+Global mean distance: 14483.676 stddev distance: 14512.826814255133
+Global mean time: 9667.5 stddev time: 71351.47236898635
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 100 Leader: 10
+bLoc: 0.6 bGlob: 0.4
+Global best: 14401.0 reached at iteration: 28
+Global worst: 14485.0
+Global mean distance: 14465.108 stddev distance: 14494.221299272702
+Global mean time: 8770.5 stddev time: 64729.46704468444
+=======================
+Problem: /home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/data/tsp/lin105.tsp
+Swarm: 100 Leader: 10
+bLoc: 0.7 bGlob: 0.3
+Global best: 14379.0 reached at iteration: 16
+Global worst: 14503.0
+Global mean distance: 14482.856 stddev distance: 14512.038724028751
+Global mean time: 7756.7 stddev time: 57234.021461792
