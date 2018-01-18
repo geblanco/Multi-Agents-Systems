@@ -2,6 +2,7 @@ package DPSO_TSP;
 
 import org.moeaframework.core.Problem;
 import org.moeaframework.core.Solution;
+import org.moeaframework.core.variable.EncodingUtils;
 import org.moeaframework.problem.tsplib.TSPInstance;
 import org.moeaframework.problem.tsplib.TSPPanel;
 import org.moeaframework.problem.tsplib.Tour;
@@ -122,9 +123,10 @@ public class TSP {
         return params;
     }
 
-    private static void reportStats(TSPInstance instance, HashMap params, Solution solution, Statistics stats, int iteration) throws Exception{
+    private static boolean reportStats(TSPInstance instance, HashMap params, Solution solution, Statistics stats, int iteration) throws Exception{
         Tour best = toTour(solution);
         double dist = best.distance(instance);
+        boolean globalBestFound = false;
 
         stats.add( dist );
 
@@ -138,6 +140,7 @@ public class TSP {
             if( dist < globalBest ){
                 params.put( KEY_GLOB_DIST_BEST, dist );
                 params.put( KEY_GLOB_ITER_REACH, iteration );
+                globalBestFound = true;
                 // System.out.println("Reached new GLOBAL best distance\n  Prev: " + globalBest + " New: " + dist);
             }
         }
@@ -151,9 +154,10 @@ public class TSP {
                 // System.out.println("Reached new GLOBAL worst distance\n  Prev: " + worstDist + " New: " + dist);
             }
         }
+        return globalBestFound;
     }
 
-    private static void testSuiteNoGUI( HashMap params ) throws Exception{
+    private static Solution[] testSuiteNoGUI( HashMap params ) throws Exception{
 
         TSPInstance instance = new TSPInstance( new File( (String) params.get(KEY_PROB_PATH) ) );
 
@@ -168,6 +172,9 @@ public class TSP {
         double bLoc = (Double) params.get(KEY_B_LOC);
         double bGlob = (Double) params.get(KEY_B_GLOB);
 
+        Solution[] bestInitialPopulation = null;
+        boolean globalBestFound;
+
         for(int run = 0; run < nRuns; run++) {
 
             Problem problem = new TSPProblem( instance );
@@ -175,11 +182,24 @@ public class TSP {
 
 
             double elapsed = System.currentTimeMillis();
+
+            int iteration = 0;
+            algorithm.step();
+            Solution[] initialPopulation = algorithm.getSwarm();
+
+            globalBestFound = reportStats( instance, params, algorithm.getResult().get( 0 ), distStats, iteration + 1 );
+            if( globalBestFound ){
+                bestInitialPopulation = initialPopulation;
+            }
+            iteration++;
+
             // now run the evolutionary algorithm
-            for(int iteration = 0; iteration < nIter; iteration++){
+            for(; iteration < nIter; iteration++){
                 algorithm.step();
-                iteration++;
-                reportStats( instance, params, algorithm.getResult().get( 0 ), distStats, iteration + 1 );
+                globalBestFound = reportStats( instance, params, algorithm.getResult().get( 0 ), distStats, iteration + 1 );
+                if( globalBestFound ){
+                    bestInitialPopulation = initialPopulation;
+                }
             }
 
             timeStats.add( System.currentTimeMillis() - elapsed );
@@ -188,6 +208,7 @@ public class TSP {
 
         params.put( KEY_GLOB_DIST, distStats );
         params.put( KEY_GLOB_TIME, timeStats );
+        return bestInitialPopulation;
     }
 
     private static void runTestSuite(String[] args) throws Exception{
@@ -217,7 +238,10 @@ public class TSP {
                 params.put( KEY_LEADER_SIZE, leaderSize[ i ] );
                 params.put( KEY_B_LOC, bLoc[ j ] );
                 params.put( KEY_B_GLOB, bGlob[ j ] );
-                testSuiteNoGUI( params );
+                Solution[] globalBest = testSuiteNoGUI( params );
+                if( globalBest != null ){
+                    printSolutions(globalBest);
+                }
                 print( params );
             }
         }
@@ -226,15 +250,29 @@ public class TSP {
     public static void print(HashMap params){
         Statistics distStats = (Statistics) params.get(KEY_GLOB_DIST);
         Statistics timeStats = (Statistics) params.get(KEY_GLOB_TIME);
-        System.out.println("=======================\n" +
-                "Problem: " + (String) params.get(KEY_PROB_PATH) + "\n" +
-                "Swarm: " + (Integer) params.get( KEY_SWARM_SIZE ) + " Leader: " + (Integer) params.get(KEY_LEADER_SIZE) + "\n" +
-                "bLoc: " + (Double) params.get(KEY_B_LOC) + " bGlob: " + (Double) params.get(KEY_B_GLOB) + "\n" +
-                "Global best: " + (Double) params.get(KEY_GLOB_DIST_BEST) + " reached at iteration: " + (Integer) params.get(KEY_GLOB_ITER_REACH) + "\n" +
-                "Global worst: " + (Double) params.get(KEY_GLOB_DIST_WORST) + "\n" +
-                "Global mean distance: " + distStats.mean() + " stddev distance: " + distStats.stddev() + "\n" +
-                "Global mean time (per iteration in ms): " + timeStats.mean() + " stddev time: " + timeStats.stddev()
+        System.out.println("=======================\nRES: " +
+                (Integer) params.get( KEY_SWARM_SIZE ) + ", " +
+                (Integer) params.get(KEY_LEADER_SIZE) + ", " +
+                (Double) params.get(KEY_B_LOC) + ", " +
+                (Double) params.get(KEY_B_GLOB) + ", " +
+                (Double) params.get(KEY_GLOB_DIST_BEST) + ", " +
+                (Integer) params.get(KEY_GLOB_ITER_REACH) + ", " +
+                (Double) params.get(KEY_GLOB_DIST_WORST) + ", " +
+                distStats.mean() + ", " + distStats.stddev() + ", " +
+                timeStats.mean() + ", " + timeStats.stddev()
         );
+    }
+
+    public static void printSolutions(Solution[] solutions){
+        System.out.println("=======================");
+        for(Solution solution : solutions){
+            int[] values = EncodingUtils.getPermutation( solution.getVariable( 0 ) );
+            System.out.print("[");
+            for(int i = 0; i < values.length; i++){
+                System.out.print(values[i] + 1 + ", ");
+            }
+            System.out.println(values[values.length-1] + "]");
+        }
     }
 
     public static void testWithUI(String path) throws IOException{
