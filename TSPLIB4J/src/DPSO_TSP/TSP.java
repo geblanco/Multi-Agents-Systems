@@ -278,12 +278,24 @@ public class TSP {
     public static void testWithUI(String path) throws IOException{
         TSPInstance instance = new TSPInstance( new File(path) );
 
+        int nIter = 100;
+        int swarmSize  = 50;
+        int leaderSize = 8;
+        double bLoc    = 0.4;
+        double bGlob   = 0.6;
+
         Problem problem = new TSPProblem( instance );
-        DPSO algorithm = new DPSO( problem, 100, 10, 0.4, 0.6 );
+        DPSO algorithm = new DPSO( problem, swarmSize, leaderSize, bLoc, bGlob );
 
         UI ui = new UI( instance );
 
-        for(int iteration = 0; iteration < 1000; iteration++) {
+        System.out.println("Parameters:\n" +
+                "Iterations: " + nIter + "\n" +
+                "Swarm Size: " + swarmSize + " Leader size: " + leaderSize + "\n" +
+                "bLoc: " + bLoc + " bGlob: " + bGlob
+        );
+
+        for(int iteration = 0; iteration < nIter; iteration++) {
 
             algorithm.step();
             iteration++;
@@ -303,8 +315,8 @@ public class TSP {
     }
 
     public static void main(String[] args) throws Exception{
-        // testWithUI( args[0] );
-        runTestSuite( args );
+        testWithUI( args[0] );
+        // runTestSuite( args );
     }
 
 }

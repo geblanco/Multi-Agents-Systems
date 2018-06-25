@@ -3,6 +3,9 @@
 work_dir=$(pwd)
 log_dir="$work_dir/results"
 file_path=$work_dir/data/tsp/$1
+if [[ ! -f $file_path ]]; then
+  file_path=$work_dir/$1
+fi
 jars=(
 	"out/production/TSPLIB4J"
 	"lib/commons-cli-1.2.jar"
@@ -14,12 +17,12 @@ jars=(
 	"lib/MOEAFramework-2.12.jar"
 	"lib/jfreechart-1.0.15.jar"
 )
-last_jar="/home/gb/Documents/AIMaster/Curso/IAMS/final_project/java/TSPLIB4J/lib/commons-lang3-3.1.jar"
+last_jar="lib/commons-lang3-3.1.jar"
 classpath=""
 for i in "${jars[@]}"; do
 	classpath+="$work_dir/$i:"
 done
-classpath+=$last_jar
+classpath+=$work_dir/$last_jar
 
 if [[ ! -d "$log_dir" ]]; then
 	mkdir -p "$log_dir"

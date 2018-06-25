@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TSPLIB4J.iml" filepath="$PROJECT_DIR$/TSPLIB4J.iml" />
+      <module fileurl="file://$PROJECT_DIR$/build/TSPLIB4J-0.2/TSPLIB4J-0.2.iml" filepath="$PROJECT_DIR$/build/TSPLIB4J-0.2/TSPLIB4J-0.2.iml" />
     </modules>
   </component>
 </project>
